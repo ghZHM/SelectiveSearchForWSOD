@@ -18,7 +18,7 @@ note: I made some modifications to it.
 
 1、Download this [Project](https://github.com/WalterMa/SelectiveSearch-RCNN) And use its demo to make sure it works
 
-2、Replace the __start.m__ in the project you download with [start.m](https://github.com/ghZHM/SelectiveSearchForWSOD/blob/main/start.m) in this project, I make some modifications to do following things
+2、Replace it's __start.m__ with [start.m](https://github.com/ghZHM/SelectiveSearchForWSOD/blob/main/start.m), I make some modifications to do following things
 
 ```
 1、In pkl file, proposals list of an image needs a index to point out with picture it belongs to.
@@ -27,7 +27,7 @@ note: I made some modifications to it.
 
 3、make a new folder named **image** in ***SelectiveSearchCodeIJCV*** and put the images of your dataset into it
 
-4、put the split file into ***SelectiveSearchCodeIJCV***
+4、put the split file (ie. test.txt;val.txt etc.) into ***SelectiveSearchCodeIJCV***
 
 Now, Your project should be like
 ```
@@ -41,7 +41,7 @@ Now, Your project should be like
     trainval.txt(if needed)
     ...and others
  ```
-5、change the split file in line 5 of  __start.m__ to generate proposals for each set and run this file
+5、change [this line](https://github.com/ghZHM/SelectiveSearchForWSOD/blob/main/start.m#L5) to specify the subset to be generate and run **start.m**.
 
 **Note: remember to save the out_box.mat & out_index.mat to another place everytime you run and make sure you know which split they below to. Otherwise they will be overwrite**
 
@@ -56,7 +56,7 @@ idx_file = './SelectiveSearchCodeIJCV/val.txt'; for validation set
 
 out_box.mat and out_index.mat need to be in the same folder with mergeRegions.py
 
-**Note: You need to do step 6 for every .mat file pair you got in step 5**
+**Note: Now you have the pkl for one subset in the whole dataset, you need to repeat from step 5 for every subset you need**
 
 
 
